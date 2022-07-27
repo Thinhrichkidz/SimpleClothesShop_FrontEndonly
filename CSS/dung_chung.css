@@ -1,0 +1,268 @@
+/*dòng tạm thời sẽ bỏ đi khi toàn tất*/
+header, footer, section{background-color: black; margin-bottom: 5px;}
+html {font-size: 62.5%;  /*1rem = 10px*/}
+/*những giá trị ( màu , cỡ chữ , font chữ ... ) dùng đi dùng lại nhiều lần */
+:root{
+	--smDis: 10px;
+	--mdDis: 20px;
+	--lgDis: 30px;
+	--xlgDis: 40px;
+	--color1: #fff;
+	--color2: #FB8122;
+	--color3: #999999;
+	--color4: #EDEDED;
+	--fontSize1: 1.8rem;
+	--fontSize2: 2.2rem;
+	--fontSize3: 2.6rem;
+	--font1:'Bungee', cursive;;
+	--font2: 'Bangers', cursive;;
+	
+}
+
+/*những dòng css giúp "reset" thẻ*/
+
+/*mọi thứ xử lý theo border box*/
+*,*::before, *::after {box-sizing: border-box;} 
+
+body {margin: 0; padding: 0; font-size: var(--fontSize1);
+	font-family: var(--font2); background-color: black;
+}
+
+section, header, footer{padding: var(--mdDis);}
+
+a {text-decoration: none;}
+.page-heading {
+	font-size: var(--fontSize2); font-family: var(--font2);
+	color: var(--color1); position: relative;  margin-top: auto;
+/*	 margin-top: var(--mdDis);*/
+}
+
+.page-heading::after {
+	content: ""; width: 100px; height: 5px;
+	background-color: red;
+/*	background-color: var(--color2);*/
+	position: absolute;
+	bottom: -10px; left: 0; border-radius: 5px;
+}
+
+.reset-list{
+	list-style: none; 
+	padding: 0;
+	margin: 0;
+}
+/*img, video chỉ rộng tối đa bằng thẻ cha*/
+img, video {
+	max-width: 100%;
+}
+.pro-name{font-weight: 600;}
+
+.btn-std{padding: var(--smDis); border: solid 1px var(--color3);
+	border-radius: 5px;
+}
+button {font-family: var(--font1); font-size: var(--fontSize1);}
+
+svg{width: 20px; height: 20px; }
+
+.hor-list{
+	list-style: none; padding: 0; margin: 0; display: flex;
+}
+
+.hor-list-center {justify-content: center;}
+
+header {position: fixed; width: 100%; height: 80px; left: 0; top: 0;z-index: 99;}
+
+header svg{width: 25px; height: 20px; fill: var(--color3)}
+
+header {height: 70px; display: flex; justify-content: space-between; align-items: center;}
+
+/*header .logo {margin-left: auto; margin-right: auto;}*/
+
+header .logo {position: absolute; left: 49%; top: 49%;
+transform: translate(-49%, -49%);
+}
+
+header button {background-color: transparent; border: none;}
+
+#btn-search {margin-left: auto;}
+
+header .link-gh {position: relative; text-decoration: none;}
+
+header .link-gh span{width: var(--lgDis); height: var(--lgDis);
+	font-size: 1.3rem; border: solid 1px var(--color3); background-color: #fff; border-radius: 50%; position: absolute; right: -15px; top: -15px; color: red; 
+	display: flex; justify-content: center; align-items: center;
+/*	text-align: center; */
+/*	line-height: var(--lgDis);*/ }
+
+/*xử lý banner*/
+.banner {padding: 0;margin-top: 80px;}
+.banner-truot {height: 250px;}
+.banner-truot .b1{background-image: url("../Pic/Banner/banner_1.webp")}
+.banner-truot .b2{background-image: url("../Pic/Banner/banner_2.webp")}
+.banner-truot .b3{background-image: url("../Pic/Banner/banner_3.webp")}
+.banner-truot .swiper-slide{
+	background-size: cover;
+	background-position: center;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.banner-truot h1{margin: 0; color: #fff; background-color: rgba(0, 0, 0, 0.3); padding: var(--smDis);}
+
+.banner .swiper-pagination {position: static;}
+
+/*đổi chấm tròn kéo thành thanh ngang*/
+.banner .swiper-pagination-bullet{width: 50px; height: 6px;
+	background-color: var(--color3); border-radius: 6px;
+    /* dòng dưới làm mờ thanh ngang, k xác định được trang hiện tại đang ở là trang thứ mấy */
+	opacity: 0.6;
+}
+/*đổi màu thanh ngang*/
+.banner .swiper-pagination-bullet-active {
+	background-color: red;
+/*	background-color: var(--color2); */
+	opacity: 1;
+}
+/*xử lý khối pro-grid*/
+.pro-grid li {
+	min-height: 60px;
+	background-color: #fff;
+	margin-bottom: var(--mdDis);
+	padding: var(--smDis);
+}
+
+/*đổi màu nút mua và chi tiết*/
+.pro-grid img{width: 100%;}
+
+.pro-grid a {color: #000;}
+
+/*phần margin-left giúp cho 2 cái giá tiền nó cách ra xa nhau dựa theo px ghi vào*/
+.pro-grid del {color: var(--color3); margin-left: 10px;}
+
+.btn-buy {
+	background-color: red; color: #000;
+	border: solid 1px red;
+}
+
+.btn-detail{font-family: var(--font1);}
+
+.the-button {display: flex; justify-content: flex-end;}
+
+.pro-grid li:last-child{margin-bottom: 0;}
+
+.shop-pagination li {margin: 0 var(--smDis); color: white;}
+
+.shop-pagination a {width: var(--lgDis); height: var(--lgDis);
+	background-color: #fff; border-radius: 5px; display: flex;
+	justify-content: center; align-items: center;
+	color: black;
+}
+
+.shop-pagination .page-1{background-color: red; opacity: 0.8;}
+
+.shop-pagination ul {align-items: center;}
+/*--------------------*/
+footer a, footer {color: #fff;}
+
+.social-links li {margin-right: var(--smDis);}
+
+.logo img{width: 75px; }
+
+footer svg{fill: white; margin-bottom: 5px;}
+
+.footer-menu {margin-top: var(mdDis); column-count: 2; font-size: 20px;}
+.footer-menu li{margin-bottom: var(--smDis); }
+
+.dia-chi{font-size: 20px;}
+
+
+footer p{margin-top: 8px; margin-bottom: 8px; font-size: 19px;}
+
+footer .shop-name{color: red; font-size: 30px; margin-top: auto; margin-bottom: auto;}
+
+/*nút menu */
+#n3v rect {transform-box: fill-box; transform-origin: center;
+	transition: transform 0.3s, opacity 0.3s, fill 0.3s;
+}
+.show-menu #n3v .rect-mid {opacity: 0;}
+.show-menu #n3v .rect-top { transform: translate(0,8.5px) rotate(45deg);
+	fill:#FFF
+}
+.show-menu #n3v .rect-bot { transform: translate(0,-8.5px) rotate(-45deg);
+	fill:#FFF
+}
+.the-menu{width: 100%; height: 100%;
+	position: fixed;left: 0;top: 80px; z-index: 98;
+	clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+	transition: clip-path 0.3s;
+}
+.show-menu .the-menu{
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.the-menu a{display: block;padding: var(--smDis);color: #FFF;
+	padding-top: var(--mdDis); font-size: 15px;
+}
+body::after {content:"";width: 100%; height: 100%;
+	position: fixed; left:0; top: 0;
+	background-color: rgba(0,0,0,0.70);z-index: 97;
+	clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+.show-menu::after, .show-search::after {
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+#btn-search 
+{
+/*	background-color: #CDA44B;*/
+	position: relative;
+	width: 25px;
+	height: 20px;
+	margin-right: var(--smDis);
+}
+#btn-search .icon-search, #btn-search .icon-close
+{
+	position: absolute; 
+	left: 0;
+	top: 0;
+}
+#btn-search .icon-search {transition: opacity 0.3s}
+#btn-search .icon-close {transition: opacity 0.3s, fill 0.3s, transform 0.3s; opacity: 0;}
+
+.show-search #btn-search .icon-search {opacity: 0;}
+.show-search #btn-search .icon-close {opacity: 1; fill: white;}
+#btn-search rect {transform-box: fill-box;transform-origin: center;
+transition: transform 0,3s;}
+.show-search .icon-close .rect-top 
+{
+	transform: translate(0,8px) rotate(45deg);
+}
+
+.show-search .icon-close .rect-bot
+{
+	transform: translate(0,-8px) rotate(-45deg);
+}
+.frm-sch
+{
+/*	background-color: #2090D1;*/
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 80px;
+	z-index: 98;
+	clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+	transition: clip-path 0.3s;
+}
+.show-search .frm-sch
+{
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.frm-sch input {
+	padding: var(--smDis) calc(20px + var(--smDis)) var(--smDis)  var(--smDis);
+	width: 100%;
+	border-radius: 30px;
+	border: none;
+}
+
+.frm-sch form{display: flex; align-items: center;}
+
+.frm-sch button {margin-left: -35px; background-color: transparent; border: none; fill: var(--color2);}
+
